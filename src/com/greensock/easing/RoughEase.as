@@ -37,15 +37,15 @@ class com.greensock.easing.RoughEase extends Ease {
 				}
 				_name = "roughEase" + (_count++);
 			}
-			var taper:String = vars.taper || "none",
-				a:Array = [],
-				cnt:Number = 0,
-				points:Number = (vars.points || 20) | 0,
-				i:Number = points,
-				randomize:Boolean = (vars.randomize !== false),
-				clamp:Boolean = (vars.clamp === true),
-				template:Ease = (vars.template instanceof Ease) ? vars.template : null,
-				strength:Number = (typeof(vars.strength) === "number") ? vars.strength * 0.4 : 0.4,
+			taper = vars.taper || "none";
+			var a:Array = [],
+				cnt:Number = 0;
+			points = (vars.points || 20) | 0;
+			var i:Number = points;
+			randomize = (vars.randomize !== false);
+			clamp = (vars.clamp === true);
+			template = (vars.template instanceof Ease) ? vars.template : null;
+			var strength:Number = (typeof(vars.strength) === "number") ? vars.strength * 0.4 : 0.4,
 				x:Number, y:Number, bump:Number, invX:Number, obj:Object;
 			while (--i > -1) {
 				x = randomize ? Math.random() : (1 / points) * i;

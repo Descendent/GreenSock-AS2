@@ -34,7 +34,7 @@ class com.greensock.easing.Ease {
 	public function getRatio(p:Number):Number {
 		if (_func) {
 			_params[0] = p;
-			return _func.apply(null, _params);
+			return Number(_func.apply(null, _params));
 		} else {
 			var r:Number = (_type === 1) ? 1 - p : (_type === 2) ? p : (p < 0.5) ? p * 2 : (1 - p) * 2;
 			if (_power === 1) {

@@ -193,11 +193,11 @@ class com.greensock.TweenNano {
 			}
 			if (time >= _duration) {
 				time = _duration;
-				this.ratio = (_ease !== _rawEase && _rawEase._calcEnd) ? _ease.call(_rawEase, 1) : 1;
+				this.ratio = (_ease !== _rawEase && _rawEase._calcEnd) ? Number(_ease.call(_rawEase, 1)) : 1;
 			} else if (time <= 0) {
-				this.ratio = (_ease !== _rawEase && _rawEase._calcEnd) ? _ease.call(_rawEase, 0) : 0;
+				this.ratio = (_ease !== _rawEase && _rawEase._calcEnd) ? Number(_ease.call(_rawEase, 0)) : 0;
 			} else {
-				this.ratio = (_ease === _rawEase) ? _ease(time, 0, 1, _duration) : _ease.call(_rawEase, time / _duration);
+				this.ratio = (_ease === _rawEase) ? _ease(time, 0, 1, _duration) : Number(_ease.call(_rawEase, time / _duration));
 			}
 			var pt:Object = _firstPT;
 			while (pt) {
